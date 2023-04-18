@@ -1,3 +1,14 @@
+/** HMR - Hot Module Reloading (It tracks the changes)
+ * How it know? because of 
+ * File Watcher algorithm - written in C++
+ * parcel-cache as parcel needs a space to run HMR, File watcher algorithm and more
+ * 
+ * 
+ */
+
+import React from "react";
+import ReactDOM from "react-dom/client";
+         
          //React Begins
         // const heading = React.createElement("h1", {}, "Hello React bhai");
         // const root = ReactDOM.createRoot(document.getElementById("root"));

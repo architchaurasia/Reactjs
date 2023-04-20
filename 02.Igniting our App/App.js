@@ -1,4 +1,4 @@
-/** HMR - Hot Module Reloading (It tracks the changes)
+/** HMR - Hot Module Replacement (It tracks the changes)
  * How it know? because of 
  * File Watcher algorithm - written in C++
  * parcel-cache as parcel needs a space to run HMR, File watcher algorithm and more

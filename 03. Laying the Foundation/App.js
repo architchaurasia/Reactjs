@@ -1,40 +1,60 @@
-/** HMR - Hot Module Replacement (It tracks the changes)
- * How it know? because of 
- * File Watcher algorithm - written in C++
- * parcel-cache as parcel needs a space to run HMR, File watcher algorithm and more
- * 
- * 
- */
-
 import React from "react";
 import ReactDOM from "react-dom/client";
-         
-         //React Begins
-        // const heading = React.createElement("h1", {}, "Hello React bhai");
-        // const root = ReactDOM.createRoot(document.getElementById("root"));
-        // root.render(heading);
+       
+        //React.createElement => Object => HTML(DOM)
+        //(we sill not using this from now)
+            // const heading = React.createElement("h1", {
+            //     id: "title",
+            //     key: "1",
+            // }, "Heading1");
 
 
-        //How react works in background
-        // let heading = document.createElement("h1");
-        // heading.innerHTML = "Hello React bhai";
-        // let root = document.getElementById("root");
-        // root.appendChild(heading);
+        //JSX =>    React.createElement => Object => HTML(DOM)
+        // //? heading or below is known as react element
+        //we are not using further more
+        // const heading = createElement("h1", {
+        //     id: "title",
+        //     key: "1",
+        // }, "Heading1");
 
-        
-        const heading = React.createElement("h1", {
-            id: "title",
-            key: "1",
-        }, "Heading1");
-        
-        const heading2 = React.createElement("h2", {
-            id: "title",
-            key: "2",
-        }, "Heading2");
+        //React Component
+        //? Name of component starts with capital letter(it's not mandidatory, but its a good practice)
+        const Heading = () => {
+            return (<h1>Using return</h1>)
+        };
 
-        const container = React.createElement("div", {
-            id: "container",
-        }, [heading, heading2])
+        // Below without return
+        // const Heading = () => (
+        //     <h1>Using without return</h1>
+        // );
+
+        //? React Element
+        const title = (
+            <h1 key = "1">React Element</h1>
+        );
+
+        //? Fuctional component
+        const Element = () => {
+            return (<h1 key = "2">React Element 2</h1>)
+        };
+
+        //? Another using most
+        // const Element = () => (
+        //      <h1 key = "2">React Element 2</h1>
+        // );
+
+        //! {} Using curly bracket we can use Javascript
+
+        const Header = () => {
+            return(
+                <div>
+                    {title}
+                    <Element />
+                    <h2>Header</h2>
+                </div>
+            )
+        }
+
 
         const root = ReactDOM.createRoot(document.getElementById("root"));
-        root.render(container);
+        root.render(<Header />);

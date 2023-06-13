@@ -3,10 +3,17 @@ import RestaurantCard from "./RestaurantCard";
 import { restaurantList } from "../../Constant";
 import { useState } from "react";
 
-const Body = () => {
-  const [searchText, setSearchText] = useState("ddd"); //returns =[variable name, function to update]
+function filterData(searchText, restaurants) {
+  const filterData = restaurants.filter((restaurant) =>
+    restaurant.data.name.includes(searchText)
+  );
+  return filterData;
+}
 
-  const [textTrue, setTextTrue] = useState("false");
+const Body = () => {
+  const [restaurants, setRestaurants] = useState(restaurantList);
+
+  const [searchText, setSearchText] = useState(""); //returns =[variable name, function to update]
 
   return (
     <>
@@ -20,15 +27,13 @@ const Body = () => {
             setSearchText(e.target.value);
           }}
         />
-        <h1>{textTrue}</h1>
         <button
           className="search-btn"
           onClick={() => {
-            if (textTrue == "true") {
-              setTextTrue("false");
-            } else {
-              setTextTrue("true");
-            }
+            //need to filter the data
+            const data = filterData(searchText, restaurants);
+            //update thestate restaurants
+            setRestaurants(data);
           }}
         >
           Search
@@ -36,7 +41,7 @@ const Body = () => {
       </div>
 
       <div className="cardlist">
-        {restaurantList.map((restaurant) => {
+        {restaurants.map((restaurant) => {
           return (
             <RestaurantCard {...restaurant.data} key={restaurant.data.id} />
           );

@@ -18,7 +18,9 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-gitignore": "^1.0.12"
+    "react-gitignore": "^1.0.12",
+    "react-shimmer": "^3.2.0",
+    "react-shimmer-effects-18": "^1.0.4"
   },
   "browserList": [
     "last 2 versions"

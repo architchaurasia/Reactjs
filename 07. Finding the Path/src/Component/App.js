@@ -2,31 +2,46 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Footer from "./Footer";
 import Body from "./Body";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import About from "./About";
 import Header from "./Header";
 import Error from "./Error";
+import RestaurantMenu from "./RestaurantMenu";
 
 
 const Applayout = () => (
   <React.Fragment>
     <Header />
-    <Body />
+    {<Outlet />}
     <Footer />
   </React.Fragment>
 );
 
-const appRouter = createBrowserRouter ([
+const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <Applayout />,
-    errorElement: <Error />
+    errorElement: <Error />,
+    children: [
+      {
+        path: "/",
+        element: <Body />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/restaurant/:id",
+        element: <RestaurantMenu />,
+      },
+    ],
   },
-  {
-    path: "/about",
-    element: <About />,
-  },
-]); 
+  // {
+  //   path: "/about",
+  //   element: <About />,
+  // },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<RouterProvider router = {appRouter} />);
+root.render(<RouterProvider router={appRouter} />);

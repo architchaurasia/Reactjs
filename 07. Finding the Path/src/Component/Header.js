@@ -1,5 +1,11 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 //Title
+
+//? SPA- Single Page Application
+//? Two type of routing
+//? Client Side and Server side routing
+
 export const Title = () => (
   <a href="/">
     <img
@@ -18,8 +24,13 @@ const Header = () => {
       <Title />
       <div className="nav-items">
         <ul>
-          <li>Home</li>
-          <li>About Us</li>
+          <Link to="/">
+            <li>Home</li>
+          </Link>
+
+          <Link to="/About">
+            <li>About Us</li>
+          </Link>
           <li>Contact Us</li>
           <li>Cart</li>
         </ul>

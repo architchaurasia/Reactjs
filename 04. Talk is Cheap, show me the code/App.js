@@ -958,6 +958,7 @@ const restaurantList = [
 ];
 
 //? By using destructuring
+//? no key(not acceptable) < index key(use only if you don't have anything) < unique key(best practice)
 
 const Restaurantcard = ({ name, cloudinaryImageId, cuisines, avgRating }) => {
   return (
@@ -981,7 +982,7 @@ const Body = () => {
   return (
     <div className="cardlist">
       {restaurantList.map((restaurant) => {
-        return <Restaurantcard {...restaurant.data} />;
+        return <Restaurantcard {...restaurant.data} key={restaurant.data.id} />;
       })}
     </div>
   );

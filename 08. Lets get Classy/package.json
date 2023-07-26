@@ -1,0 +1,29 @@
+{
+  "name": "08.Lets get Classy",
+  "version": "1.0.0",
+  "description": "First app",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "author": "Archit Chaurasia",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.21.4",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "parcel": "^2.8.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-gitignore": "^1.0.12",
+    "react-router-dom": "^6.14.1",
+    "react-shimmer": "^3.2.0",
+    "react-shimmer-effects-18": "^1.0.4"
+  },
+  "browserList": [
+    "last 2 versions"
+  ]
+}

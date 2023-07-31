@@ -7,6 +7,7 @@ import About from "./About";
 import Header from "./Header";
 import Error from "./Error";
 import RestaurantMenu from "./RestaurantMenu";
+import Profile from "./Profile";
 
 const Applayout = () => (
   <React.Fragment>

@@ -27,15 +27,30 @@ class About extends React.Component {
     console.log("Parent componentdidmount");
   }
   render() {
-    console.log("Parent render")
-    return(
-    <div>
-      <h1>This is a about page of food</h1>
-      <Profile name={"Archit Chaurasia"} /> {/*It goes into it which we call child*/}
-      {/* <ProfileComponent name={"Archit"} /> */}
-    </div>
-    )
+    console.log("Parent render");
+    return (
+      <div>
+        <h1>This is a about page of food</h1>
+        <Profile name={"Archit Chaurasia"} />{" "}
+        {/*It goes into it which we call child*/}
+        {/* <ProfileComponent name={"Archit"} /> */}
+      </div>
+    );
   }
 }
 
 export default About;
+
+/**
+ * Parent Constructor
+ * Parent render
+ *   First Child constructor
+ *   First child render
+ *   Second child render with
+ *
+ *   DOM Updated for children
+ *
+ *   first child componentDidMount
+ *   second child componentDidMount
+ * Parent componentDidMount
+ */

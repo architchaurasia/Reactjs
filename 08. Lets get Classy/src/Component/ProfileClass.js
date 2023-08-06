@@ -5,18 +5,25 @@ class Profile extends React.Component {
     super(props);
     //Create State
     this.state = {
-      count: 0,
-      count2: 3,
+      userInfo: {
+        name: "Dummy Name",
+        location: "Dummy Location",
+      },
     };
     console.log("child constructor");
   }
-  componentDidMount(){
+  async componentDidMount() {
     //API call
-    console.log("Child Component did mount");
-}
+    const data = await fetch("https://api.github.com/users/architchaurasia");
+    const json = await data.json();
+    this.setState({
+      userInfo: json,
+    });
+    console.log("Child Component did mount " + this.props.name);
+  }
   render() {
     const { count } = this.state;
-    console.log("child render")
+    console.log("child render");
     return (
       <div>
         <h1>Name: {this.props.name}</h1>
@@ -30,6 +37,9 @@ class Profile extends React.Component {
         >
           Click on me!
         </button>
+        <h1>{this.state.userInfo.name}</h1>
+        <img src={this.state.userInfo.avatar_url} />
+        <h2>{this.state.userInfo.bio}</h2>
       </div>
     );
   }

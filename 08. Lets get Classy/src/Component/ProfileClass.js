@@ -12,15 +12,36 @@ class Profile extends React.Component {
     };
     console.log("child constructor");
   }
-  async componentDidMount() {
-    //API call
-    const data = await fetch("https://api.github.com/users/architchaurasia");
-    const json = await data.json();
-    this.setState({
-      userInfo: json,
-    });
+
+  componentDidMount() {
+    this.timer = setInterval(() => {
+      console.log("Namaste React Op");
+    }, 1000);
     console.log("Child Component did mount " + this.props.name);
   }
+
+  //?Github API
+  // async componentDidMount() {
+  //   //API call
+  //   const data = await fetch("https://api.github.com/users/architchaurasia");
+  //   const json = await data.json();
+  //   this.setState({
+  //     userInfo: json,
+  //   });
+  //   console.log("Child Component did mount " + this.props.name);
+  // }
+
+  componentDidUpdate() {
+    console.log("componentDidUpdate");
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timer);
+    console.log(
+      "componentWillMount"
+    ); /**If u change the page it will unmount */
+  }
+
   render() {
     const { count } = this.state;
     console.log("child render");
@@ -46,3 +67,38 @@ class Profile extends React.Component {
 }
 
 export default Profile;
+
+/**
+ *
+ * ?Render Cycle
+ * Parent Constructor
+ * Parent render
+ *  First Child constructor
+ *  First Child render
+ *  Second Child constructor
+ *  Second Child render
+ *
+ * ?Commit phase
+ *  DOM Updated for children
+ *  json logged in console
+ *  child componentDid Mount
+ *
+ *  Parent ComponentDid Mount
+ *
+ */
+
+/**
+ *?Remove parent
+ *
+ * child constructor
+ * child render
+ * child componentDidMount
+ *
+ * API call
+ * Set state
+ *
+ * <UPDATE CYCLE>
+ * render
+ *
+ *
+ */

@@ -20,14 +20,14 @@ import React from "react";
 class About extends React.Component {
   constructor(props) {
     super(props);
-    console.log("Parent construtor");
+    // console.log("Parent construtor"); //comment it for set state to work
   }
   componentDidMount() {
     //Api Call
-    console.log("Parent componentdidmount");
+    // console.log("Parent componentdidmount");
   }
   render() {
-    console.log("Parent render");
+    // console.log("Parent render");
     return (
       <div>
         <h1>This is a about page of food</h1>
